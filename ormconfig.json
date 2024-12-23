@@ -1,0 +1,13 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "leandro",
+    "password": "root",
+    "database": "photo",
+    "entities": ["src/modules/**/entity/*.entities{.ts,.js}"],
+    "migrations": ["src/modules/database/migrations/*{.ts,.js}"],
+    "cli": {
+      "migrationsDir": "src/modules/database/migrations"
+    }
+  }
