@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { DataBaseModule } from './database/database.module';
-import { PhotoModule } from './database/photo.module';
+import { DataBaseModule } from './modules/database.module';
+import { PhotoModule } from './modules/photo.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './modules/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -17,6 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/database/entity/**/*.entity{.ts,.js}'],
       autoLoadEntities: true,
     }),
+    UserModule,
     PhotoModule
   ],
   controllers: [],
