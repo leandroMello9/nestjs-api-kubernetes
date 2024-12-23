@@ -1,4 +1,5 @@
 import { Photo } from 'src/database/entity/photo.entity';
+import { User } from 'src/database/entity/user.entity';
 import { DataSource } from 'typeorm';
 
 export const databaseProviders = [
@@ -11,9 +12,10 @@ export const databaseProviders = [
         port: 5432,
         username: 'leandro',
         password: 'root',
-        database: 'photo',
+        database: 'postgres',
         entities: [
-           Photo
+           Photo,
+           User
         ],
         synchronize: true,
         migrations: [__dirname + '../modules/database/migrations/*{.ts,.js}'],

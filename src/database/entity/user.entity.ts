@@ -15,4 +15,5 @@ export class User extends BaseEntityDataBase {
   
     @Column('text')
     password: string; 
+    
 }
